@@ -5,6 +5,9 @@ on:
     - cron: "*/5 * * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write # Needed to push code back
+
 jobs:
   run-node-process:
     runs-on: ubuntu-latest
