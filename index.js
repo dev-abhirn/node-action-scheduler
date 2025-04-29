@@ -14,12 +14,21 @@ function getLastRunTime() {
   }
 }
 
+function writetCurrentRunTime() {
+  const nowUTC = new Date().toISOString();
+
+  try {
+    fs.writeFileSync(filePath, nowUTC, "utf8");
+    console.log(`UTC time written to ${filePath}: nowUTC`);
+  } catch (err) {
+    console.error("Error writing to file:", err);
+  }
+}
+
 function runProcess() {
   const lastRun = getLastRunTime();
-  // Do whatever process you want to run with the last run time
-
-  console.log("Running your Node.js process...");
-  // Your Node.js process code goes here
+  console.log(`Get Activities since ${lastRun}........................`);
+  writetCurrentRunTime();
 }
 
 runProcess();
