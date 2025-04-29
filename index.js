@@ -18,8 +18,8 @@ function writetCurrentRunTime() {
   const nowUTC = new Date().toISOString();
 
   try {
-    fs.writeFileSync(filePath, nowUTC, "utf8");
-    console.log(`UTC time written to ${filePath}: nowUTC`);
+    fs.writeFileSync(lastRunFilePath, nowUTC, "utf8");
+    console.log(`UTC time written to ${lastRunFilePath}: nowUTC`);
   } catch (err) {
     console.error("Error writing to file:", err);
   }
