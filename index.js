@@ -19,7 +19,7 @@ function writetCurrentRunTime() {
 
   try {
     fs.writeFileSync(lastRunFilePath, nowUTC, "utf8");
-    console.log(`UTC time written to ${lastRunFilePath}: nowUTC`);
+    console.log(`UTC time written to ${lastRunFilePath}: ${nowUTC}`);
   } catch (err) {
     console.error("Error writing to file:", err);
   }
